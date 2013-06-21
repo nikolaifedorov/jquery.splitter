@@ -77,7 +77,8 @@
       B.css(opts.origin, newPos+bar._DA)
         .css(opts.split, splitter._DA-bar._DA-newPos).css(opts.fixed,  splitter._DF);
       // IE fires resize for us; all others pay cash
-      if ( !$.browser.msie )
+      if ( !$.support.boxModel )
+        //$.browser.msie
         panes.trigger("resize");
     }
     function dimSum(jq, dims) {
@@ -125,7 +126,8 @@
     // Focuser element, provides keyboard support; title is shown by Opera accessKeys
     var focuser = $('<a href="javascript:void(0)"></a>')
       .attr({accessKey: opts.accessKey, tabIndex: opts.tabIndex, title: opts.splitbarClass})
-      .bind($.browser.opera?"click":"focus", function(){ this.focus(); bar.addClass(opts.activeClass) })
+      // .bind($.browser.opera?"click":"focus", function(){ this.focus(); bar.addClass(opts.activeClass) })
+      .bind("click", function(){ this.focus(); bar.addClass(opts.activeClass) })
       .bind("keydown", function(e){
         var key = e.which || e.keyCode;
         var dir = key==opts["key"+opts.side1]? 1 : key==opts["key"+opts.side2]? -1 : 0;
@@ -186,10 +188,12 @@
         var top = splitter.offset().top;
         var wh = $(window).height();
         splitter.css("height", Math.max(wh-top-splitter._hadjust, splitter._hmin)+"px");
-        if ( !$.browser.msie ) splitter.trigger("resize");
+        if ( !$.support.boxModel ) splitter.trigger("resize");
+        //$.browser.msie
       }).trigger("resize");
     }
-    else if ( opts.resizeToWidth && !$.browser.msie )
+    else if ( opts.resizeToWidth && !$.support.boxModel )
+      //$.browser.msie
       $(window).bind("resize", function(){
         splitter.trigger("resize"); 
       });
