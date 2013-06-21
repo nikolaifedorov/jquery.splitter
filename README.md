@@ -13,6 +13,9 @@ For more details see: http://methvin.com/splitter/
 
 Released under dual licensed under the MIT and GPL licenses:
 
-http://www.opensource.org/licenses/mit-license.php 
+MIT:
+http://www.opensource.org/licenses/mit-license.php
+
+GPL:
 http://www.gnu.org/licenses/gpl.html
 
