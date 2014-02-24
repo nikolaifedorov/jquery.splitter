@@ -1,6 +1,8 @@
 jquery.splitter
 ===============
 
+[![Code Climate](https://codeclimate.com/github/nikolaifedorov/jquery.splitter.png)](https://codeclimate.com/github/nikolaifedorov/jquery.splitter)
+
 The splitter() plugin implements a two-pane resizable splitter window.
 The selected elements in the jQuery object are converted to a splitter;
 each selected element should have two child elements, used for the panes
