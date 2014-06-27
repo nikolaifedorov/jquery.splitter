@@ -40,7 +40,8 @@ $().ready(function(){
 
 [Docking splitter](http://methvin.com/splitter/vsplitter-docking.html): Splitter that allows the user to double-click the splitbar to "dock" it.
 
-
+# Release Notes
+See the [release notes](http://methvin.com/splitter/history.html) for the changes from previous versions.
 
 # Patch Contributors
 
